@@ -53,9 +53,7 @@ body {
 
 #player{
 	display: table;
-    margin: 0 auto;
-    padding-top: 12px;
-    padding-bottom: 17px;
+    margin: 12px auto 17px;
 	}
 
 * {box-sizing:border-box}
