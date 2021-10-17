@@ -66,6 +66,10 @@ body {
   min-height: 27vh;
 }
 
+.hidden {
+  display: none;
+}
+
 .photoS{
 	max-width: 90%;
 	max-height: 49vh;

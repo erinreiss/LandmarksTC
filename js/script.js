@@ -51,24 +51,30 @@ $(locations).click(
 			}
 		}
 
-		var i;
-		for (i = 1; i <= count; i++) {
-			// populate pager
-			var pagerDot = $('<span />').addClass('dot');
-			pagerDot.click(handlePagerClick(i));
-			pager.append(pagerDot);
-
-			// populate slideshow
-			var newSlide = $('<div />').addClass('mySlides fade');
-			var newImg = $('<img />').addClass('photoS').attr('src', `images/${this.id}-${i}.jpg`);
-			newSlide.append(newImg);
-			slideshow.append(newSlide);
+		if (count > 0) {
+			slideshow.removeClass('hidden');
+			var i;
+			for (i = 1; i <= count; i++) {
+				// populate pager
+				var pagerDot = $('<span />').addClass('dot');
+				pagerDot.click(handlePagerClick(i));
+				pager.append(pagerDot);
+	
+				// populate slideshow
+				var newSlide = $('<div />').addClass('mySlides fade');
+				var newImg = $('<img />').addClass('photoS').attr('src', `images/${this.id}-${i}.jpg`);
+				newSlide.append(newImg);
+				slideshow.append(newSlide);
+			}
+			currentSlide(1);
+		} else {
+			slideshow.addClass('hidden');
 		}
+
 		
 		console.log(count);
 		console.log(speaker);
 		changeTrack(thisAudio);
-		currentSlide(1);
 		$('.lSpeaker').text(speaker);
 		//old stuff that works with Json
 				// console.log(matchData[i].lAudio);
